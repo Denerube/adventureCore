@@ -1,0 +1,31 @@
+services:
+  mariadb:
+    image: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - ~/apps/mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=nimda
+      - MYSQL_PASSWORD=secret
+      - MYSQL_USER=admin
+      - MYSQL_DATABASE=advCoreDB
+    networks:
+      - my-network
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - mariadb
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      - MYSQL_ROOT_PASSWORD=nimda
+      - MYSQL_USERNAME=admin
+      - PMA_HOST=mariadb
+    networks:
+      - my-network
+# Define networks
+networks:
+  my-network:
