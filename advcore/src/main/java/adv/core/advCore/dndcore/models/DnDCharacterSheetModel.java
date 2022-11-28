@@ -26,6 +26,24 @@ public class DnDCharacterSheetModel {
     @Column
     private int proficiencyBonus;
 
+    @Column
+    private int currentHitpoints;
+
+    @Column
+    private int maximunHitpoints;
+
+    @Column
+    private int currentHitDice;
+
+    @Column
+    private int maximumHitDice;
+
+    @Column
+    private int CurrentDeathSaveFailures;
+
+    @Column
+    private int CurrentDeathSaveSucceses;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "playerId",referencedColumnName = "id")
     private PlayerModel player;

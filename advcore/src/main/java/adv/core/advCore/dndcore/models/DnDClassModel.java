@@ -15,6 +15,12 @@ public class DnDClassModel {
     @Column
     private String ClassName;
 
+    @Column
+    private int hitDice;
+
+    @Column
+    private String hitDieType;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "systemId",referencedColumnName = "id")
     private SystemModel system;
