@@ -1,13 +1,13 @@
 package adv.core.advCore.dndcore.models;
 
-import adv.core.advCore.dndcore.models.keys.DnDCharacterSheetAbilitiesPK;
+import adv.core.advCore.dndcore.models.keys.DnDCharacterSheetSkillPK;
 
 import javax.persistence.*;
 
-public class DnDCharacterSheetAbilityModel {
+public class DnDCharacterSheetSkillModel {
 
     @EmbeddedId
-    private DnDCharacterSheetAbilitiesPK dnDCharacterSheetAbilitiesPK;
+    private DnDCharacterSheetSkillPK dnDCharacterSheetSkillPK;
 
     @ManyToOne
     @MapsId("DnDCharacterSheetId")

@@ -3,7 +3,7 @@ package adv.core.advCore.dndcore.models.keys;
 import javax.persistence.Column;
 import java.io.Serializable;
 
-public class DnDCharacterSheetAbilitiesPK implements Serializable {
+public class DnDCharacterSheetSkillPK implements Serializable {
     @Column
     private long DnDCharacterSheetId;
     @Column
