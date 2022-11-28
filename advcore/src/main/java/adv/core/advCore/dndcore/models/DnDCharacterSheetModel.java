@@ -1,5 +1,6 @@
 package adv.core.advCore.dndcore.models;
 
+import adv.core.advCore.general.models.PlayerModel;
 import adv.core.advCore.general.models.SystemModel;
 
 import javax.persistence.*;
@@ -12,12 +13,30 @@ public class DnDCharacterSheetModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private String characterName;
+
+    @Column
+    private Boolean Inspiration;
+
+    @Column
+    private int experiencePoints;
+
+    @Column
+    private int proficiencyBonus;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "playerId",referencedColumnName = "id")
+    private PlayerModel player;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "systemId",referencedColumnName = "id")
     private SystemModel system;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dndAlignMentId",referencedColumnName = "id")
+    private DnDAlignmentModel alignment;
 
     @OneToMany(mappedBy = "dndClass")
     private Set<DnDCharacterSheetClassModel> classes;
@@ -31,6 +50,12 @@ public class DnDCharacterSheetModel {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "dndraceId",referencedColumnName = "id")
     private DnDRaceModel race;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dndBackgroundId",referencedColumnName = "id")
+    private DnDBackground background;
+
+
 
 
 }
