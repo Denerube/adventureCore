@@ -1,5 +1,6 @@
 package adv.core.advCore.dndcore.models;
 
+import adv.core.advCore.general.models.DiceTypes;
 import adv.core.advCore.general.models.SystemModel;
 
 import javax.persistence.*;
@@ -18,8 +19,8 @@ public class DnDClassModel {
     @Column
     private int hitDice;
 
-    @Column
-    private String hitDieType;
+    @Enumerated(EnumType.STRING)
+    private DiceTypes hitDieType;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "systemId",referencedColumnName = "id")
