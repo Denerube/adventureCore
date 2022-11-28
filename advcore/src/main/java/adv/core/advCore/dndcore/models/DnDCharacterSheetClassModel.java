@@ -19,7 +19,7 @@ public class DnDCharacterSheetClassModel {
     @ManyToOne
     @MapsId("DnDClassId")
     @JoinColumn(name = "classId")
-    private DnDClass dndClass;
+    private DnDClassModel dndClass;
 
     @Column
     private int classLevel;

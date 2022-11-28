@@ -28,5 +28,9 @@ public class DnDCharacterSheetModel {
     @OneToMany(mappedBy = "dndAbility")
     private Set<DnDCharacterSheetAbilityModel> abilities;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dndraceId",referencedColumnName = "id")
+    private DnDRaceModel race;
+
 
 }

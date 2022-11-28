@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity(name = "DnDClasses")
 @Table(name = "dndClasses")
-public class DnDClass {
+public class DnDClassModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
