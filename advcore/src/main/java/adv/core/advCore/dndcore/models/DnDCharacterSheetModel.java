@@ -22,5 +22,11 @@ public class DnDCharacterSheetModel {
     @OneToMany(mappedBy = "dndClass")
     private Set<DnDCharacterSheetClassModel> classes;
 
+    @OneToMany(mappedBy = "dndSkill")
+    private Set<DnDCharacterSheetSkillModel> skills;
+
+    @OneToMany(mappedBy = "dndAbility")
+    private Set<DnDCharacterSheetAbilityModel> abilities;
+
 
 }

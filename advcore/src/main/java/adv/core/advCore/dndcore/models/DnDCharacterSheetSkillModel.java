@@ -4,6 +4,8 @@ import adv.core.advCore.dndcore.models.keys.DnDCharacterSheetSkillPK;
 
 import javax.persistence.*;
 
+@Entity(name = "DnDCharacterSheetSkill")
+@Table(name = "dndCharacterSheetSkill")
 public class DnDCharacterSheetSkillModel {
 
     @EmbeddedId
@@ -15,9 +17,9 @@ public class DnDCharacterSheetSkillModel {
     private DnDCharacterSheetModel characterSheet;
 
     @ManyToOne
-    @MapsId("DnDAbilityId")
-    @JoinColumn(name = "abilityId")
-    private DnDAbilityModel ability;
+    @MapsId("DnDSkillId")
+    @JoinColumn(name = "dndSkillId")
+    private DnDSkillModel dndSkill;
 
     @Column
     private boolean proficiency;
