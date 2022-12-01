@@ -14,7 +14,7 @@ public class DnDClassModel {
     private Long id;
 
     @Column
-    private String ClassName;
+    private String className;
 
     @Column
     private int hitDice;

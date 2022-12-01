@@ -4,6 +4,7 @@ import adv.core.advCore.general.models.PlayerModel;
 import adv.core.advCore.general.models.SystemModel;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "DnDCharacter")
@@ -44,6 +45,19 @@ public class DnDCharacterSheetModel {
     @Column
     private int CurrentDeathSaveSucceses;
 
+    @Column
+    private String personalityTraits;
+
+    @Column
+    private String ideals;
+
+    @Column
+    private String bonds;
+
+    @Column
+    private String flaws;
+
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "playerId",referencedColumnName = "id")
     private PlayerModel player;
@@ -72,6 +86,16 @@ public class DnDCharacterSheetModel {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "dndBackgroundId",referencedColumnName = "id")
     private DnDBackground background;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "CharacterSheet_Language",
+            joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
+            inverseJoinColumns = { @JoinColumn(name = "dndLanguage_id") }
+    )
+    Set<DnDLanguageModel> charachterSheetLanguages = new HashSet<>();
+
+
 
 
 

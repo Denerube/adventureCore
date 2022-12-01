@@ -2,16 +2,17 @@ package adv.core.advCore.dndcore.models;
 
 import javax.persistence.*;
 
-@Entity(name = "DnDRaces")
-@Table(name = "dndRaces")
-public class DnDRaceModel {
+@Entity(name = "DnDProficiency")
+@Table(name = "dndProficiency")
+public class DnDProficiencyModel {
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String raceName;
+    private String description;
 
-    @Column
-    private String speed;
+
+
 }
