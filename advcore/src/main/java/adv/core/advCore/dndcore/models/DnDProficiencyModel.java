@@ -1,6 +1,8 @@
 package adv.core.advCore.dndcore.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "DnDProficiency")
 @Table(name = "dndProficiency")
@@ -12,6 +14,9 @@ public class DnDProficiencyModel {
 
     @Column
     private String description;
+
+    @ManyToMany(mappedBy = "characterSheetProficiencies")
+    private Set<DnDCharacterSheetModel> employees = new HashSet<>();
 
 
 

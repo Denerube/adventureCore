@@ -16,6 +16,6 @@ public class DnDLanguageModel {
     @Column
     private String description;
 
-    @ManyToMany(mappedBy = "charachterSheetLanguages")
+    @ManyToMany(mappedBy = "characterSheetLanguages")
     private Set<DnDCharacterSheetModel> employees = new HashSet<>();
 }

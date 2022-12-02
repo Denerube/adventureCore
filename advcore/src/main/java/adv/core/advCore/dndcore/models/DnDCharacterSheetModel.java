@@ -93,7 +93,17 @@ public class DnDCharacterSheetModel {
             joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
             inverseJoinColumns = { @JoinColumn(name = "dndLanguage_id") }
     )
-    Set<DnDLanguageModel> charachterSheetLanguages = new HashSet<>();
+    Set<DnDLanguageModel> characterSheetLanguages = new HashSet<>();
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "CharacterSheet_Proficiency",
+            joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
+            inverseJoinColumns = { @JoinColumn(name = "dndProficienct_id") }
+    )
+    Set<DnDProficiencyModel> characterSheetProficiencies = new HashSet<>();
+
+
 
 
 
