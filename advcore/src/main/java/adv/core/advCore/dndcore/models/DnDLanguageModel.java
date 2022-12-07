@@ -17,5 +17,10 @@ public class DnDLanguageModel {
     private String description;
 
     @ManyToMany(mappedBy = "characterSheetLanguages")
-    private Set<DnDCharacterSheetModel> employees = new HashSet<>();
+    private Set<DnDCharacterSheetModel> characterSheets = new HashSet<>();
+
+    @ManyToMany(mappedBy = "raceLanguages")
+    private Set<DnDRaceModel> races = new HashSet<>();
+
+
 }

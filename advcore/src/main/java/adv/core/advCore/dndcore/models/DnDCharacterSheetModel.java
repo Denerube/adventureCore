@@ -7,8 +7,8 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "DnDCharacter")
-@Table(name = "dndCharacters")
+@Entity(name = "DnDCharacteSheet")
+@Table(name = "dndCharacterSheet")
 public class DnDCharacterSheetModel {
 
     @Id
@@ -99,9 +99,25 @@ public class DnDCharacterSheetModel {
     @JoinTable(
             name = "CharacterSheet_Proficiency",
             joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
-            inverseJoinColumns = { @JoinColumn(name = "dndProficienct_id") }
+            inverseJoinColumns = { @JoinColumn(name = "dndProficiency_id") }
     )
     Set<DnDProficiencyModel> characterSheetProficiencies = new HashSet<>();
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "CharacterSheet_Feature",
+            joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
+            inverseJoinColumns = { @JoinColumn(name = "dndFeature_id") }
+    )
+    Set<DnDFeatureModel> characterSheetFeatures = new HashSet<>();
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "CharacterSheet_Trait",
+            joinColumns = { @JoinColumn(name = "dndCharactersheet_id") },
+            inverseJoinColumns = { @JoinColumn(name = "dndTrait_id") }
+    )
+    Set<DnDTraitModel> characterSheetTraits = new HashSet<>();
 
 
 

@@ -16,7 +16,7 @@ public class DnDProficiencyModel {
     private String description;
 
     @ManyToMany(mappedBy = "characterSheetProficiencies")
-    private Set<DnDCharacterSheetModel> employees = new HashSet<>();
+    private Set<DnDCharacterSheetModel> characterSheets = new HashSet<>();
 
 
 
