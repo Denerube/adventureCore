@@ -14,6 +14,6 @@ public class PlayerModel {
     private String playerName;
     @ManyToOne
     @JoinColumn(name = "userId",nullable = false)
-    private UserModel user;
+    private UserAccountModel user;
 
 }
