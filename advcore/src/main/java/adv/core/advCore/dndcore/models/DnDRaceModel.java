@@ -19,7 +19,7 @@ public class DnDRaceModel {
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "Race_Language",
+            name = "DnD_Race_Language",
             joinColumns = { @JoinColumn(name = "dndRace_id") },
             inverseJoinColumns = { @JoinColumn(name = "dndLanguage_id") }
     )
@@ -28,7 +28,7 @@ public class DnDRaceModel {
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "Race_Trait",
+            name = "DnD_Race_Trait",
             joinColumns = { @JoinColumn(name = "dndRace_id") },
             inverseJoinColumns = { @JoinColumn(name = "dndTrait_id") }
     )

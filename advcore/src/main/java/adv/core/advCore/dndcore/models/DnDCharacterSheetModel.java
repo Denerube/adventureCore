@@ -58,8 +58,8 @@ public class DnDCharacterSheetModel {
     private String flaws;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "playerId",referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "playerId")
     private PlayerModel player;
 
     @OneToOne(cascade = CascadeType.ALL)
